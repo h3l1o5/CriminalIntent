@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,7 +59,6 @@ public class CrimeListFragment extends Fragment {
 		public void onBindViewHolder(CrimeHolder holder, int position) {
 			Crime crime = mCrimes.get(position);
 			holder.bindCrime(crime);
-			System.out.println(position);
 		}
 
 		@Override
@@ -83,7 +83,7 @@ public class CrimeListFragment extends Fragment {
 		public void bindCrime(Crime crime) {
 			mCrime = crime;
 			mTitleTextView.setText(mCrime.getTitle());
-			mDateTextView.setText(mCrime.getDate().toString());
+			mDateTextView.setText(DateFormat.getLongDateFormat(getContext()).format(mCrime.getDate())+"  "+DateFormat.getTimeFormat(getContext()).format(mCrime.getDate()));
 			mSolvedCheckBox.setChecked(mCrime.isSolved());
 		}
 
