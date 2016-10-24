@@ -12,3 +12,4 @@ skills:
 6. getActivity() = get the context(memory location) of the activity which manage the fragment
 7. fragment argument (p.197)
 8. Hierarchical Navigation (p.248) 、 the activity that you navigate up to will be completely re-created from scratch (p.253)
+9. implicit intent (p.255)
